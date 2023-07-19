@@ -56,13 +56,19 @@ setCurrentMove(move=>move+1);
   };
   return( 
    <div className="app">
+    <h1>TIC <span className='text-green'>TAC </span>TOE</h1>
     <h2><StatusMessage winner={winner} gamingBoard={gamingBoard} /></h2>
     <Board squares={gamingBoard.squares} 
     handleSquareClick={handleSquareClick}
     winningSquares={winningSquares}/>
     <button type="button" onClick={onNewGameStart} className={`btn-reset ${winner ? 'active' : ''}`}>Start new game</button>
-    <h2>Current Game history</h2>
+    <h2 style={
+      {fontWeight: 'normal',}
+    }>Current Game history</h2>
     <History history={history} moveTo={moveTo} currentMove={currentMove}/>
+    <div className='bg-balls'>
+       
+    </div>
     </div>
   );
   }
